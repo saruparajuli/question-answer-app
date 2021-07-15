@@ -1,0 +1,18 @@
+{% if current_user.is_authenticated %}
+<nav><li><a href="{{url_for('question')}}">Ask a Question</a></li></nav>
+<nav><li><a href="{{url_for('logout')}}">Logout</a></li></nav>
+{% else %}
+<nav><li><a href="{{url_for('login')}}">Login</a></li></nav>
+<nav><li><a href="{{ url_for('register') }}">Register</a></li></nav>
+{% endif %}
+{% for question in questions %}
+
+    <h2>{{question.content}} - Asked By <a href="#">{{ question.user.username }}</a></h2>
+    {% for comment in question.comment %}
+    
+    <span>{{ comment.username }}</span><p>{{comment.content}} - Answered By <a href="#">{{ comment.user.username }}</a></p>
+    {% endfor %}
+    {% if current_user.is_authenticated %}
+    <a href="{{ url_for('comment', id=question.id) }}">Post a comment</a>
+    {% endif %}
+{% endfor %}

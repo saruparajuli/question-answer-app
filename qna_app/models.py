@@ -1,4 +1,4 @@
-from quiz_app import db, login_manager
+from qna_app import db, login_manager
 from flask_login import UserMixin
 
 @login_manager.user_loader

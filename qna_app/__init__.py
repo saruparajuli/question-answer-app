@@ -10,4 +10,4 @@ db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
 login_manager = LoginManager(app)
 
-from quiz_app import routes
+from qna_app import routes

@@ -1,6 +1,6 @@
-from quiz_app.models import User, Question, Comment
-from quiz_app.forms import registrationForm, loginForm, questionForm, commentForm
-from quiz_app import app, db, bcrypt
+from qna_app.models import User, Question, Comment
+from qna_app.forms import registrationForm, loginForm, questionForm, commentForm
+from qna_app import app, db, bcrypt
 from flask import render_template, url_for, redirect
 from flask_login import login_user, current_user, logout_user, login_required
 
